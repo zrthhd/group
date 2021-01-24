@@ -36,7 +36,6 @@ tDisplay.pack(side=t.LEFT, fill=t.Y, padx=(5, 0))
 scrollBar.config(command=tDisplay.yview)
 tDisplay.config(yscrollcommand=scrollBar.set, background="#F4F6F7", highlightbackground="grey", state="disabled")
 lstclFrame.pack(side=t.BOTTOM, pady=(5, 10))
-<<<<<<< HEAD
 
 server = None
 HOST_ADDR = "192.168.0.116" #ip address of the server
