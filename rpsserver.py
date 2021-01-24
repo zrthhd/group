@@ -49,16 +49,16 @@ p_data = [] #data about the player
 #function for the server start button and to initiate connection
 def start():
     #global is used to create variables from a non-global scope
-	#in this case inside a function
-    global serv, HOST_ADDR, HOST_PORT 
+    #in this case inside a function
+    global serv, HOST_ADDR, HOST_PORT
     startBtn.config(state=t.DISABLED) #button is disabled upon select
     stopBtn.config(state=t.NORMAL)
 
     serv = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    
+
     print socket.AF_INET
     print socket.SOCK_STREAM
-    
+
     serv.bind((HOST_ADDR, HOST_PORT))
     serv.listen(5)  #server listens for client
 
@@ -132,14 +132,14 @@ def message_from_client(cl_connect, cl_ip_addr):
 
             p_data = []
 
-    
+
     indeks = retrieve_indeks_cl(cs, cl_connect)
     del cs_nama[indeks]
     del cs[indeks]
     cl_connect.close()
     #to update the client name and display it on clients list
     nama_display_update(cs_nama)  #update client nama display
-    
+
 #the index of the current clients is returned to the clients list
 def retrieve_indeks_cl(cl_list, cl_current):
     indeks = 0
@@ -158,6 +158,3 @@ def nama_display_update(nama_list):
         tDisplay.insert(t.END, k+"\n".encode('ascii'))
         tDisplay.config(state=t.DISABLED)
 window_utama.mainloop()
-
-=======
->>>>>>> b1f3f50d0e65a9372a2bfec81917725474f9a608
